@@ -1,14 +1,24 @@
-import CompetitionCard from "./CompetitionCard";
 
-// Competitions.jsx
+import { useNavigate } from 'react-router-dom';
+import CompetitionCard from './CompetitionCard';
+
 const Competitions = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/competitions');
+  };
+
   return (
-    <div className="flex flex-col min-h-[578px] items-center justify-center gap-4 md:gap-8 px-4 md:px-8 lg:px-[160px]  py-8">
+    <div className="flex flex-col min-h-[578px] items-center justify-center gap-4 md:gap-8 px-4 md:px-8 lg:px-[160px] py-8">
       <h1 className="text-[32px] md:text-[48px] font-bold text-center">
         Ближайшие соревнования
       </h1>
-      <button className="border-[#E6E8EC] w-[40px] h-[40px] border-2 rounded-full flex items-center justify-center self-end">
-        <img src="/arrow.svg" alt="" />
+      <button
+        className="border-[#E6E8EC] w-[40px] h-[40px] border-2 rounded-full flex items-center justify-center self-end"
+        onClick={handleButtonClick}
+      >
+        <img src="/arrow.svg" alt="Go to competitions page" />
       </button>
       <div className="flex flex-col md:flex-row gap-4 overflow-x-auto">
         <CompetitionCard
