@@ -12,6 +12,11 @@ import СompetitionTabsNow from './components/СompetitionTabsNow.jsx';
 import CompetitionList from './components/CompetitionList.jsx';
 import LearningHero from './components/LearningHero.jsx';
 import BeginnerCourses from './components/BeginnerCourses.jsx';
+import BeginnerCoursesTabsNow from './components/BeginnerCoursesTabsNow.jsx';
+import BeginnerCourseslist from './components/BeginnerCourseslist.jsx';
+import ComHero from './components/ComHero.jsx';
+import TabMenu from './components/TabMenu.jsx';
+import './index.css';
 
 const App = () => {
   return (
@@ -41,8 +46,35 @@ const App = () => {
             <>
             <LearningHero />
             <BeginnerCourses/>
+            <BeginnerCoursesTabsNow/>
+            <BeginnerCourseslist/>
+            <Footer />
             </>
             } />
+            <Route path="/forum" element={
+            <>
+            <Footer />
+            </>
+            } />
+            <Route path="/faq" element={
+            <>
+            <Footer />
+            </>
+            } />
+            <Route path="/contact" element={
+            <>
+            <Footer />
+            </>
+            
+            } />
+            <Route path="/Competition" element={
+            <>
+            <ComHero/>
+            <TabMenu />
+            <Footer />
+            </>
+            } />
+
       </Routes>
       
     </Router>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CompetitionCard from './CompetitionCard';
 
 const CompetitionList = () => {
   const initialCompetitions = [
@@ -30,33 +31,40 @@ const CompetitionList = () => {
   const handleShowMore = () => {
     setCompetitions((prevCompetitions) => [
       ...prevCompetitions,
-      ...initialCompetitions, // Add more of the same cards
+      ...initialCompetitions, // Добавляем те же карточки (по 3 штуки)
     ]);
   };
 
   return (
     <div className="flex flex-col items-center py-8 px-4 md:px-8 lg:px-16">
-      <h2 className="text-[24px] md:text-[32px] font-bold mb-6">Все</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
-        {competitions.map((comp, index) => (
-          <div key={index} className="border rounded-lg p-4 shadow-md flex flex-col justify-between">
-            <div>
-              <div className="flex justify-between text-sm text-gray-500">
-                <span>{comp.start_date} - {comp.end_date}</span>
-                <img src={comp.icon} alt="" className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-bold mt-2">{comp.title}</h3>
-              <p className="text-sm mt-2">{comp.description}</p>
-            </div>
-            <button className="bg-[#377dff] text-white px-4 py-2 rounded-full font-bold mt-4 self-start">
-              Участвовать
-            </button>
-          </div>
-        ))}
+      {/* Заголовок слева */}
+      <h2 className="text-[24px] md:text-[32px] font-bold text-left w-full max-w-6xl mb-6">
+        Все
+      </h2>
+
+      <div className="w-full max-w-6xl">
+        {/* Карточки (с использованием grid для разделения на ряды) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mt-3">
+          {competitions.map((comp, index) => (
+            <CompetitionCard
+              key={index}
+              start_date={comp.start_date}
+              end_date={comp.end_date}
+              title={comp.title}
+              description={comp.description}
+              icon={comp.icon}
+            />
+          ))}
+        </div>
+
+        {/* Кнопка "Показать ещё 100+" */}
+        <button
+          onClick={handleShowMore}
+          className="mt-6 bg-white text-gray-400 border border-gray-400 px-9 py-1 rounded-full font-bold text-lg w-full max-w-[330px] mx-auto block hover:bg-gray-100 hover:text-gray-600 hover:border-gray-600"
+        >
+          Показать ещё 100+
+        </button>
       </div>
-      <button onClick={handleShowMore} className="mt-6 bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-bold">
-        Показать ещё 100+
-      </button>
     </div>
   );
 };

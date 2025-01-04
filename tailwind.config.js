@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         sans: ["DM Sans", "Poppins", "sans-serif"],
       },
+      colors: {
+        primary: '#C5E4FF',
+        secendary: '#2B73B1'
+      },
     },
   },
   plugins: [],

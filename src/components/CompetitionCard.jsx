@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
+
 const CompetitionCard = ({
   start_date,
   end_date,
@@ -5,6 +7,15 @@ const CompetitionCard = ({
   description,
   icon,
 }) => {
+  const navigate = useNavigate(); // Инициализируем navigate
+
+  const handleParticipateClick = () => {
+    navigate('/competition'); // Переход на страницу /competition при клике
+
+    // Прокручиваем страницу вверх
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="w-full md:w-[352px] min-h-[262px] border border-[#b1b5c3] rounded-[20px] px-4 md:px-[21px] py-[26px] flex flex-col justify-between gap-[18px]">
       <span className="text-[#141416] text-[12px] self-end">
@@ -19,7 +30,10 @@ const CompetitionCard = ({
         </p>
       </div>
       <div className="flex flex-row justify-between items-center">
-        <button className="py-2 md:py-3 px-4 md:px-6 max-h-[40px] rounded-full bg-[#2b73b1] hover:bg-[#2b73b1]/80 transition-colors text-white text-[12px] md:text-[14px] leading-4 self-end font-bold">
+        <button
+          onClick={handleParticipateClick} // Добавляем обработчик для кнопки
+          className="py-2 md:py-3 px-4 md:px-6 max-h-[40px] rounded-full bg-[#2b73b1] hover:bg-[#2b73b1]/80 transition-colors text-white text-[12px] md:text-[14px] leading-4 self-end font-bold"
+        >
           Участвовать
         </button>
         <div className="w-[45px] h-[45px] md:w-[57px] md:h-[57px] flex items-center justify-center">

@@ -7,9 +7,9 @@ const Header = ({ user = { name: "User", image: "/user_image.svg" } }) => {
   const menuItems = {
     Соревнования: "/competitions",
     Обучение: "/learning",
-    Форум: "#",
-    FAQ: "#",
-    Контакты: "#",
+    Форум: "/forum",
+    FAQ: "/faq",
+    Контакты: "/contact",
   };
 
   const toggleMenu = () => {

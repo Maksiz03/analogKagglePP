@@ -42,10 +42,10 @@ const BeginnerCoursesTabsNow = () => {
   };
 
   return (
-    <div className="flex flex-col items-center py-8 px-4 md:px-8 lg:px-16 bg-primary">
+    <div className="flex flex-col items-center py-8 px-4 md:px-8 lg:px-16 bg-[#00000]">
       {/* Заголовок */}
       <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-bold  text-left w-full max-w-6xl">
-        Для начинающих
+        Для тех, кто хочет улучшить свои навыки
       </h2>
 
       {/* Контейнер для карточек и стрелок */}
