@@ -16,14 +16,24 @@ import BeginnerCoursesTabsNow from './components/BeginnerCoursesTabsNow.jsx';
 import BeginnerCourseslist from './components/BeginnerCourseslist.jsx';
 import ComHero from './components/ComHero.jsx';
 import TabMenu from './components/TabMenu.jsx';
+import Course from './components/Course.jsx';
 import './index.css';
+import TabMenuCourse from './components/TabMenuCourse.jsx';
+import Registration from './components/Registration.jsx';
+import Login from './components/Login.jsx';
 
 const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={
+      <Route path="/" element={
+          <>
+            <Registration />
+
+          </>
+        } />
+        <Route path="/Main" element={
           <>
             <Hero />
             <ForWho />
@@ -72,6 +82,23 @@ const App = () => {
             <ComHero/>
             <TabMenu />
             <Footer />
+            </>
+            } />
+            <Route path="/Course" element={
+            <>
+            <Course/>
+            <TabMenuCourse />
+            <Footer />
+            </>
+            } />
+            <Route path="/Registration" element={
+            <>
+            <Registration/>
+            </>
+            } />
+            <Route path="/Login" element={
+            <>
+            <Login/>
             </>
             } />
 

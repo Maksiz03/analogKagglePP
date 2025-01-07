@@ -18,20 +18,20 @@ const Header = ({ user = { name: "User", image: "/user_image.svg" } }) => {
 
   return (
     <nav className="relative flex flex-row w-full h-[92px] bg-[#fcfcfd] items-center text-[#777e90] font-bold px-4 md:px-10 2xl:px-40 gap-8 justify-between border-b border-[#e6e8ec]">
-      <div className="flex items-center gap-8 flex-shrink-0">
+      <div className="flex items-center gap-8 flex-shrink-0 ">
         <div id="logo" className="h-[52px] flex-shrink-0">
-          <Link to="/">
+          <Link to="/Main">
             <img
               src="/logo.svg"
               alt="Logo"
-              className="w-full h-full object-contain cursor-pointer"
+              className="w-full h-full object-contain cursor-pointer "
             />
           </Link>
         </div>
 
         <div
           id="separator"
-          className="hidden md:block h-[40px] w-[2px] bg-[#e6e8ec] flex-shrink-0"
+          className="hidden md:block h-[40px] w-[2px] bg-[#e6e8ec] flex-shrink-0 "
         ></div>
       </div>
 
@@ -49,7 +49,7 @@ const Header = ({ user = { name: "User", image: "/user_image.svg" } }) => {
       </div>
 
       {/* Right section */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 ">
         {/* Mobile Hamburger Button */}
         <button
           className="md:hidden self-end"
@@ -87,7 +87,7 @@ const Header = ({ user = { name: "User", image: "/user_image.svg" } }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-[92px] left-0 right-0 bg-[#fcfcfd] md:hidden z-50">
+        <div className="absolute top-[92px] left-0 right-0 bg-[#fcfcfd] md:hidden z-50 ">
           <div className="flex flex-col w-full border-t border-[#e6e8ec]">
             {Object.keys(menuItems).map((item, index) => (
               <Link

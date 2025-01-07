@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
 
 const CompetitionList = () => {
   const initialCompetitions = [
@@ -20,12 +21,17 @@ const CompetitionList = () => {
   ];
 
   const [competitions, setCompetitions] = useState(initialCompetitions);
+  const navigate = useNavigate(); // Инициализируем navigate
 
   const handleShowMore = () => {
     setCompetitions((prevCompetitions) => [
       ...prevCompetitions,
       ...initialCompetitions.slice(0, 3), // Добавляем еще 3 карточки
     ]);
+  };
+
+  const handleStartClick = () => {
+    navigate('/course'); // Переход на страницу /course
   };
 
   return (
@@ -46,7 +52,10 @@ const CompetitionList = () => {
             />
             <h3 className="text-[18px] font-bold text-left mb-4">{comp.title}</h3>
             <p className="text-[14px] text-gray-600 text-left">{comp.description}</p>
-            <button className="bg-black text-white px-6 py-2 rounded-full font-bold mt-auto self-start w-40">
+            <button
+              onClick={handleStartClick} // Добавляем обработчик на кнопку "Начать"
+              className="bg-black text-white px-6 py-2 rounded-full font-bold mt-auto self-start w-40"
+            >
               Начать
             </button>
           </div>
@@ -58,7 +67,6 @@ const CompetitionList = () => {
       >
         Показать ещё
       </button>
-
     </div>
   );
 };

@@ -8,7 +8,10 @@ export default {
       },
       colors: {
         primary: '#C5E4FF',
-        secendary: '#2B73B1'
+        secendary: '#2B73B1',
+      },
+      backgroundImage: {
+        'custom-image': "url('/Group 363.svg')",
       },
     },
   },
